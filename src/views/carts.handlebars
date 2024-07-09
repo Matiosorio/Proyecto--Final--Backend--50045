@@ -1,0 +1,62 @@
+<div class="cart-container">
+    <h1>Shopping Cart</h1>
+
+    <div class="cart-cards-container">
+        <h3 class="section-title">Productos adquiridos</h3>
+        <div class="cart-cards-wrapper">
+            {{#each products}}
+            <div class="cart-card">
+                <p><strong>Producto:</strong> {{this.product.title}}</p>
+                <p><strong>Cantidad:</strong> {{this.quantity}}</p>
+                <p class="card-text"><strong>Precio:</strong> ${{this.product.totalPrice}}</p>
+                <button onclick="deleteProduct('{{this.cartId}}', '{{this.product._id}}')"
+                    class="btn btn-danger">Eliminar</button>
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+
+    <button onclick="emptyCart('{{cartId}}')" class="btn btn-danger btn-empty-cart">Vaciar Cart</button>
+    <h3 class="mt-2 total-purchase">Total de la compra: ${{totalPurchase}}</h3>
+
+    <form action="/api/carts/{{cartId}}/purchase" method="POST" class="purchase-form">
+        <button type="submit" class="btn btn-primary">Finalizar Compra</button>
+    </form>
+
+    <div class="back-to-products">
+        <a href="/products" class="btn btn-secondary">Volver a Productos</a>
+    </div>
+
+    <script>
+        function deleteProduct(cartId, productId) {
+            fetch(`/api/carts/${cartId}/product/${productId}`, {
+                method: 'DELETE'
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error al eliminar el producto del cart');
+                    }
+                    location.reload();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        function emptyCart(cartId) {
+            fetch(`/api/carts/${cartId}`, {
+                method: 'DELETE'
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error al vaciar el carrito');
+                    }
+                    location.reload();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</div>

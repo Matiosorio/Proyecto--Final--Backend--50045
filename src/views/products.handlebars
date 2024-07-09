@@ -1,0 +1,68 @@
+<!-- Vista de Productos -->
+<div class="products-container">
+
+
+    <h1>Bienvenido, {{user.first_name}} {{user.last_name}}!</h1>
+    <a href="/carts/{{cartId}}" class="ms-5">
+        <i class="bi bi-cart"></i>
+    </a>
+
+    <h2>Productos Disponibles</h2>
+
+    <div class="cards-container">
+        {{#each products}}
+        <div class="card">
+            <img src="{{img}}" alt="{{title}}" class="card-img">
+            <div class="card-body">
+                <h3>{{title}}</h3>
+                <p>{{description}}</p>
+                <p>Precio: ${{price}}</p>
+                <p>Categoría: {{category}}</p>
+
+                <form action="/api/carts/{{../cartId}}/product/{{id}}" method="POST">
+                    <div class="input-group mb-3">
+                        <button type="button" class="btn btn-outline-secondary"
+                            onclick="decreaseQuantity(this)">-</button>
+                        <input type="number" class="form-control" value="1" name="quantity" id="quantityInput" readonly>
+                        <button type="button" class="btn btn-outline-secondary"
+                            onclick="increaseQuantity(this)">+</button>
+                    </div>
+                    <button class="btn-add-to-cart" type="submit">Agregar al Carrito</button>
+                </form>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <!-- Paginación -->
+    <div class="pagination-container">
+        {{#if hasPrevPage}}
+        <a href="/products?page={{prevPage}}" class="pagination-link">Anterior</a>
+        {{/if}}
+        {{#if hasNextPage}}
+        <a href="/products?page={{nextPage}}" class="pagination-link">Siguiente</a>
+        {{/if}}
+        <p class="pagination-info">Página {{currentPage}} de {{totalPages}}</p>
+    </div>
+
+    <!-- Botón de Logout -->
+    <a href="/api/sessions/logout" class="logout-btn">Logout</a>
+</div>
+
+<script>
+    function decreaseQuantity(button) {
+        let input = button.parentNode.querySelector('input[type=number]');
+        let currentValue = parseInt(input.value);
+        if (!isNaN(currentValue) && currentValue > 1) {
+            input.value = currentValue - 1;
+        }
+    }
+
+    function increaseQuantity(button) {
+        let input = button.parentNode.querySelector('input[type=number]');
+        let currentValue = parseInt(input.value);
+        if (!isNaN(currentValue)) {
+            input.value = currentValue + 1;
+        }
+    }
+</script>

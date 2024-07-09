@@ -1,0 +1,21 @@
+<h1>Mi Perfil</h1>
+
+<div class="profile-card">
+  <p>Bienvenido, {{user.fullname}}!</p>
+  <p>Rol: {{user.role}}</p>
+
+
+  {{#if isAdmin}}
+  <a class="btnMios" href="/realTimeProducts">Modificar Productos</a>
+    <a class="btnMios" href="/users">Listado de usuarios</a>
+  {{else}}
+  {{#if this.isPremium}}
+  <a class="btnMios" href="/premium-panel">Panel Premium</a>
+  {{/if}}
+  <a class="btnMios" href="/chat">Chat en vivo</a>
+  <a class="btnMios" href="/products">Tienda</a>
+  {{/if}}
+  <form action="/api/sessions/logout" method="GET">
+    <button class="btnMios" type="submit">Logout</button>
+  </form>
+</div>

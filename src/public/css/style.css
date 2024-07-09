@@ -1,0 +1,445 @@
+h1, h2 {
+    color: black;
+    text-align: center;
+}
+
+/* HEADER */
+/* Estilo para el navbar */
+.navbar {
+    background-color: #f8f9fa; /* Color de fondo */
+    padding: 1rem; /* Espaciado interno */
+}
+
+/* Estilo para el logo */
+.navbar img {
+    width: 250px; /* Ancho máximo del logo */
+    /*  */height: auto; /* Altura automática para mantener la proporción */
+    margin-right: 1rem; /* Espaciado a la derecha */
+}
+
+/* Estilo para los enlaces del navbar */
+.navbar-nav .nav-item {
+    margin-right: 0.5rem; /* Espaciado entre elementos */
+}
+
+/* Estilo para los enlaces del navbar */
+.navbar-nav .nav-link {
+    color: #212529; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Estilo para los enlaces del navbar cuando se les hace hover */
+.navbar-nav .nav-link:hover {
+    color: #007bff; /* Color del texto al hacer hover */
+}
+
+nav li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 15px;
+    color: black;
+    padding: 0 15px;
+}
+
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: calc(33.33% - 20px); /* Ajuste para que las tarjetas sean más anchas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-container {
+    width: 100%;
+    height: 180px; /* Ajuste para reducir la altura de la imagen */
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+.profile-card {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease; 
+    text-align: center;
+  }
+
+  .profile-card p {
+    margin-bottom: 10px;
+  }
+
+  .profile-card .btnMios {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #c1101a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .profile-card .btnMios:hover {
+    background-color: #ff1f33;
+  }
+
+  .profile-card a {
+    display: block;
+    margin-bottom: 10px;
+    color: #c1101a;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .real-time-card {
+    height: 150px; /* Ajusta la altura según sea necesario */
+    /* Otros estilos específicos para las tarjetas en tiempo real */
+}
+
+form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto; 
+    margin-right: auto; 
+    max-width: 400px; /
+}
+
+form input,
+form select {
+    max-width: 300px;
+    width: 100%;
+    padding: 8px;
+    margin: 10px auto; 
+    box-sizing: border-box;
+    display: block; 
+}
+
+form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    display: block; 
+    margin: 0 auto; 
+}
+
+/* Estilos específicos para el carrito */
+
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cart-container h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.cart-cards-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cart-cards-wrapper {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-card p {
+    margin: 5px 0;
+}
+
+.cart-card button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cart-card button:hover {
+    background-color: #c82333;
+}
+
+.purchase-form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.purchase-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.purchase-form button:hover {
+    background-color: #0056b3;
+}
+
+.btn-empty-cart {
+    display: block;
+    margin: 20px auto;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-empty-cart:hover {
+    background-color: #c82333;
+}
+
+.total-purchase {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.back-to-products {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-to-products .btn {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.back-to-products .btn:hover {
+    background-color: #5a6268;
+}
+
+
+
+/* Agrega estilos al contenedor principal */
+.products-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para el encabezado principal */
+.products-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el rol del usuario */
+.products-container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
+/* Estilos para el botón de logout */
+.products-container .logout-btn {
+    background-color: #c0392b;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.pagination-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination-link {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.pagination-info {
+    margin-top: 10px;
+}
+
+.carousel-item img {
+    width: 100%; /* Establece el ancho al 100% del contenedor */
+    height: 400px; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+  }
+
+  .hidden {
+    display: none;
+}
+
+.btnMios {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #c1101a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .productsTitle {
+    margin-top: 20px; /* Margen superior para separar del carousel */
+    text-align: center; /* Centrar el título */
+  }
+  
+  .additional-info {
+    margin: 20px auto; /* Margen automático para centrar el contenido */
+    max-width: 800px; /* Ancho máximo del contenedor de información */
+  }
+  
+  .additional-info p {
+    margin-bottom: 10px; /* Margen inferior entre párrafos */
+    line-height: 1.6; /* Espaciado de línea para una lectura más cómoda */
+  }
+
+  /* CHECKOUT */
+
+  .formulario {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.formulario h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.formulario p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.formulario span {
+    font-weight: bold;
+    color: #444;
+}
+
+.grupo-btn {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.grupo-btn a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.grupo-btn a:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btnMios {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btnMios:hover {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+.noSub {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.noSub:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+}
