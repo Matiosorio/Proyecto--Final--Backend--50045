@@ -11,7 +11,7 @@ router.get("/products", isUser, viewsController.productsView); // Cambio aquí
 router.get("/carts/:cid", isUser, viewsController.cartsView); // Cambio aquí
 router.get("/login", viewsController.getLoginView);
 router.get("/register", viewsController.getRegisterView);
-router.get("/realTimeProducts", isAdminOrPremium, viewsController.realTimeProductsView);
+router.get("/realTimeProducts", isAdmin, viewsController.realTimeProductsView);
 router.get("/chat", isUser, viewsController.chatView);
 router.get("/", viewsController.getHomeView);
 
